@@ -1,7 +1,7 @@
 $(document).ready(function(){
   //console.log("here's your mock data to start with:")
   //console.log(GLOBAL_MOCK_DATA_OBJECT)
-	$.get(("http://api.giphy.com/v1/gifs/search?q=funny+cats&api_key=dc6zaTOxFJmzC"), function handleResponse(data){
+	$.get((""), function handleResponse(data){
 	      data.data.forEach(function(element){ 
 	      	$("#sanity-check").append("<img src='" + element.images.fixed_height.url + "'>");
 	      });
@@ -16,7 +16,7 @@ $(document).ready(function(){
 	//GLOBAL_MOCK_DATA_OBJECT.data.forEach (function(element,index){
 		 	var link = $("input").val()
 		 	 $("img").remove();
-				 $.get(("http://api.giphy.com/v1/gifs/search?q="+ link +"&api_key=dc6zaTOxFJmzC"), function handleResponse(data){
+				 $.get(("https://openapi.etsy.com/v2/listings/active/?limit=15&tags=cats&category=clothing&api_key=3kqfujuiow2nni3pco8gnzbf"), function handleResponse(data){
 				      data.data.forEach(function(element){ 
 			         
 						 $("#sanity-check").append("<img src='" + element.images.fixed_height.url + "'>");
