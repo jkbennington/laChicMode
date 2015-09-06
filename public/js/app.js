@@ -16,7 +16,7 @@ $(document).ready(function(){
 	//GLOBAL_MOCK_DATA_OBJECT.data.forEach (function(element,index){
 		 	var link = $("input").val()
 		 	 $("img").remove();
-				 $.get(("https://openapi.etsy.com/v2/listings/active/?limit=15&tags=cats&category=clothing&api_key=3kqfujuiow2nni3pco8gnzbf"), function handleResponse(data){
+				 $.get(("https://openapi.etsy.com/v2/listings/active/?limit=15&tags=cats&category=clothing&api_key=), function handleResponse(data){
 				      data.data.forEach(function(element){ 
 			         
 						 $("#sanity-check").append("<img src='" + element.images.fixed_height.url + "'>");
