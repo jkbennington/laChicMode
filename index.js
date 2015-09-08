@@ -1,14 +1,19 @@
 var express = require("express"),
     path = require("path"),
     bodyParser = require("body-parser"),
-    session = require("express-session")
+    session = require("express-session"),
+
     _ = require("underscore");
+
 
 var app = express();
 
+var db = require("./models");
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
-app.use(express.static("bower_components"));
+app.use("/vendor", express.static("bower_components"));
+
 
 var views = path.join(process.cwd(), "views");
 
@@ -48,8 +53,11 @@ app.get("/api/logout", function (req, res){
 });
 
 app.post(["/users", "/api/signup"], function signup(req, res){
-	var user = req.body.user;
+	
+	var user = req.body.email;
+	console.log(user)
 	var email = user.email;
+	console.log(email)
 	var password = user.password;
 	db.User.createSecure(email, password, function() {
 		db.User.authenticate(email, password, function (err, user){
@@ -63,15 +71,22 @@ app.post(["/sessions", "/api/login"], function login(req, res){
 	var user = req.body.user;
 	var email = user.email;
 	var password = user.password;
-	db>User.authenticate(email, password, function (err, user){
+	db.User.authenticate(email, password, function (err, user){
 		if(err){
-			res.redirect("/login")
+			res.send(400)
 		}else {
 			req.login(user);
-			res.redirect(200)
+			res.send(200);
 		}
-	})
-})
+	});
+});
+
+app.get("/profile", function userShow(req, res){
+	req.currentUser(function (err, user){
+		res.send("Hello" + user.email);
+	});
+});
+
 
 app.listen(3000, function(){
 	console.log("Listening on port 3000.")
