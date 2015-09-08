@@ -1,6 +1,7 @@
 var express = require("express"),
     path = require("path"),
     bodyParser = require("body-parser"),
+    session = require("express-session")
     _ = require("underscore");
 
 var app = express();
@@ -18,7 +19,7 @@ app.get("/", function (req, res){
 
 app.use(
 	session({
-		secret: 'secret-key'
+		secret: 'secret-key',
 		resave: false,
 		saveUninitialized: true
 	})
@@ -29,7 +30,7 @@ app.use(function(req,res,next){
 		req.session.userId = user._id;
 	};
 	req.currentUser = function(cb) {
-		db.User.findOne({_id:req.session.userId}m function (err, user){
+		db.User.findOne({_id:req.session.userId}, function (err, user){
 			req.user = user;
 			cb(null, user);
 		})
