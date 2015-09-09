@@ -50,40 +50,42 @@ app.use(function(req,res,next){
 app.get("/api/logout", function (req, res){
 	req.logout();
 	res.send(200);
+	res.redirect("/profile")
 });
 
 app.post(["/users", "/api/signup"], function signup(req, res){
 	
 	var user = req.body.email;
-	console.log(user)
-	var email = user.email;
+	var email = user;
 	console.log(email)
-	var password = user.password;
-	db.User.createSecure(email, password, function() {
-		db.User.authenticate(email, password, function (err, user){
-			req.login(user);
-			res.send(200);
-		});
+	var password = req.body.password;
+	db.User.createSecure(email, password, function (err, user) {
+			if(err){
+				res.send(400)
+			}
+			req.login(user)
+			res.redirect("/profile")
 	});
 });
 
 app.post(["/sessions", "/api/login"], function login(req, res){
-	var user = req.body.user;
-	var email = user.email;
-	var password = user.password;
+	var user = req.body.email;
+	var email = user
+	console.log(email)
+	var password = req.body.password;
 	db.User.authenticate(email, password, function (err, user){
 		if(err){
 			res.send(400)
 		}else {
 			req.login(user);
-			res.send(200);
+			res.redirect("/profile");
 		}
 	});
 });
 
 app.get("/profile", function userShow(req, res){
 	req.currentUser(function (err, user){
-		res.send("Hello" + user.email);
+		res.send("Hello " + user.email);
 	});
 });
 

@@ -1,14 +1,20 @@
+
 $(document).ready(function(){
+  //console.log("here's your mock data to start with:")
+  //console.log(GLOBAL_MOCK_DATA_OBJECT)
+	$.get(("https://openapi.etsy.com/v2/listings/active.js?limit=15&tags=cats&keywords=women&category=clothes&includes=Images:1&api_key=3kqfujuiow2nni3pco8gnzbf"), function handleResponse(data){
+	      data.results.forEach(function(element){ 
+	      	$("#sanity-check").append("<img src='" + element.Images.url_75x75 + "'>");
+	      });
+	});
 
-
-})	
 function($){
 
     $(document).ready(function(){
-        $('#etsy-search').bind('submit', function() {
-            api_key = "your_api_key";
+        $('#etsy-search').bind('#submit', function() {
+            api_key = "3kqfujuiow2nni3pco8gnzbf";
             terms = $('#etsy-terms').val();
-            etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=women"+
+            etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords="+
                 terms+"&limit=12&includes=Images:1&api_key="+api_key;
 
             $('#etsy-images').empty();
@@ -43,15 +49,4 @@ function($){
         })
     });
 
-})(jQuery);
-</script>
-</head>
-<body>
-    <form id="etsy-search">
-        <input id="etsy-terms" size="32">
-        <button>Search!</button>
-    </form>
-
-    <div id="etsy-images"></div>
-</body>
-</html>
+});

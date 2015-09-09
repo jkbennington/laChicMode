@@ -8,6 +8,7 @@
 		  <script type="text/javascript" src="/vendor/underscore/underscore.js"></script>
 		  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
 		  <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		  <script rel="text/javascript" href="js/app.js"></script>
 		  
 	</head>
 	<body>
@@ -26,7 +27,7 @@
 		      <div class="collapse navbar-collapse">
 		        <ul class="nav navbar-nav">
 		          <li class="active"><a href="#">Home</a></li>
-		          <li><a href="#favorites">Favorites</a></li>
+		          <li><a href="#">Profile</a></li>
 		          <li><a href="#about">About</a></li>
 		        </ul>
 		        <button type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#myModal">Sign In/Sign Up</button>
@@ -62,7 +63,7 @@
 		                  <div class="control-group">
 		                    <label class="control-label" for="email">Email:</label>
 		                    <div class="controls">
-		                      <input required="" id="userid" name="user[email]" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
+		                      <input required="" id="email" name="email" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
 		                    </div>
 		                  </div>
 
@@ -70,7 +71,7 @@
 		                  <div class="control-group">
 		                    <label class="control-label" for="passwordinput">Password:</label>
 		                    <div class="controls">
-		                      <input required="" id="passwordinput" name="user[password]" class="form-control" type="password" placeholder="********" class="input-medium">
+		                      <input required="" id="password" name="password" class="form-control" type="password" placeholder="********" class="input-medium">
 		                    </div>
 		                  </div>
 		                  <!-- Button -->
@@ -100,7 +101,6 @@
 		                    <label class="control-label" for="password">Password:</label>
 		                    <div class="controls">
 		                      <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
-		                      <em>1-8 Characters</em>
 		                    </div>
 		                  </div
 		                 
@@ -108,7 +108,7 @@
 		                  <div class="control-group">
 		                    <label class="control-label" for="confirmsignup"></label>
 		                    <div class="controls">
-		                      <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+		                      <input id="confirmsignup" name="confirmsignup" type="submit" class="btn btn-success">Sign Up</input>
 		                    </div>
 		                  </div>
 		                  </fieldset>
@@ -132,12 +132,11 @@
 		    	<div class="row">
 		    		<div class="col-md-4"></div>
 		            <div class="col-md-4">
-		        		<h2>Custom search field</h2>
-		                <div id="custom-search-input">
+		                <div id="etsy-search">
 		                    <div class="input-group col-md-12 centered">
 		                        <input id="etsy-terms"type="text" class="form-control input-lg" placeholder="Search Here" />
 		                        <span class="input-group-btn">
-		                            <button class="btn btn-info btn-lg" type="button">
+		                            <button class="btn btn-info btn-lg" id="submit" type="button">
 		                                <i class="glyphicon glyphicon-search"></i>
 		                            </button>
 		                        </span>
@@ -149,6 +148,7 @@
 		    </div>
 		    <!-- End Search Box -->
 		    <div id="etsy-images"></div>
+		    <div id="sanity-check"></div>
 
 
 		<!-- this last div below separates the footer -->

@@ -2,6 +2,7 @@
 html,
 body {
   height: 100%;
+  width:100%;
   background-image: url("street.jpg");
   /* The html and body elements cannot have any padding or margin. */
 }
@@ -47,7 +48,7 @@ h2 {
   padding-right: 15px;
 }
 
-#custom-search-input{
+#etsy-search{
     padding: 3px;
     border: solid 1px #E4E4E4;
     border-radius: 6px;
@@ -55,7 +56,7 @@ h2 {
     opacity:0.75
 }
 
-#custom-search-input input{
+#etsy-search input{
     border: 0;
     box-shadow: none;
     background-color: rgb(51,51,51);
@@ -63,7 +64,7 @@ h2 {
     color:#FFFFEB;
 }
 
-#custom-search-input button{
+#etsy-search button{
     margin: 2px 0 0 0;
     background: none;
     box-shadow: none;
@@ -74,7 +75,7 @@ h2 {
     opacity:0.75;
 }
 
-#custom-search-input button:hover{
+#etsy-search button:hover{
     border: 0;
     box-shadow: none;
     border-left: solid 1px #ccc;
@@ -82,6 +83,6 @@ h2 {
     opacity:0.75
 }
 
-#custom-search-input .glyphicon-search{
+#etsy-search .glyphicon-search{
     font-size: 23px;
 }
