@@ -70,12 +70,11 @@ app.post(["/users", "/api/signup"], function signup(req, res){
 
 app.post(["/sessions", "/api/login"], function login(req, res){
 	var user = req.body.email;
-	var email = user
-	console.log(email)
+	var email = user;
 	var password = req.body.password;
 	db.User.authenticate(email, password, function (err, user){
 		if(err){
-			res.send(400)
+			res.sendStatus(400)
 		}else {
 			req.login(user);
 			res.redirect("/profile");
