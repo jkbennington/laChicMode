@@ -50,7 +50,7 @@ app.use(function(req,res,next){
 app.get("/api/logout", function (req, res){
 	req.logout();
 	res.send(200);
-	res.redirect("/profile")
+	res.redirect("/#")
 });
 
 app.post(["/users", "/api/signup"], function signup(req, res){
@@ -64,7 +64,7 @@ app.post(["/users", "/api/signup"], function signup(req, res){
 				res.send(400)
 			}
 			req.login(user)
-			res.redirect("/profile")
+			res.redirect("/#")
 	});
 });
 

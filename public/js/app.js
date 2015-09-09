@@ -1,20 +1,23 @@
 
-$(document).ready(function(){
-  //console.log("here's your mock data to start with:")
-  //console.log(GLOBAL_MOCK_DATA_OBJECT)
-	$.get(("https://openapi.etsy.com/v2/listings/active.js?limit=15&tags=cats&keywords=women&category=clothes&includes=Images:1&api_key=3kqfujuiow2nni3pco8gnzbf"), function handleResponse(data){
-	      data.results.forEach(function(element){ 
-	      	$("#sanity-check").append("<img src='" + element.Images.url_75x75 + "'>");
-	      });
-	});
+// $(function() {
+// 	alert("welcome!");
+//   //console.log("here's your mock data to start with:")
+//   //console.log(GLOBAL_MOCK_DATA_OBJECT)
+// 	$.get(("https://openapi.etsy.com/v2/listings/active.js?limit=15&tags=cats&keywords=women&category=clothes&includes=Images:1&api_key=3kqfujuiow2nni3pco8gnzbf"), function handleResponse(data){
+// 		console.log(data);
+// 	      data['results'].forEach(function(element){ 
+// 	      	$("#sanity-check").append("<img src='" + element.Images[0]url_75x75 + "'>");
+// 	      });
+// 	}));
+// });
 
-function($){
+$(function(){
 
     $(document).ready(function(){
-        $('#etsy-search').bind('#submit', function() {
+        $('#etsy-search').click('submit', function() {
             api_key = "3kqfujuiow2nni3pco8gnzbf";
             terms = $('#etsy-terms').val();
-            etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords="+
+            etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=women&category=clothes&tags="+
                 terms+"&limit=12&includes=Images:1&api_key="+api_key;
 
             $('#etsy-images').empty();
