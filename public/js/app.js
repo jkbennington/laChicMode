@@ -31,7 +31,7 @@ $(function(){
                         $('#etsy-images').empty();
                         if (data.count > 0) {
                             $.each(data.results, function(i,item) {
-                                $("<img/>").attr("src", item.Images[0].url_75x75).appendTo("#etsy-images").wrap(
+                                $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images").wrap(
                                     "<a href='" + item.url + "'></a>"
                                 );
                                 if (i%4 == 3) {
