@@ -2,11 +2,17 @@ var mongoose = require("mongoose"),
 	Schema = mongoose.Schema,
 	bcrypt = require('bcrypt');
 
+var Favorite = new Schema({
+	favorite: String     
+});
+
 var UserSchema = new Schema({
 	email: {type:String, required: true},
 	passwordDigest: {type: String, required: true},
+	favorites: [Favorite],
 	createdAt: {type: Date, default: Date.now()}
 });
+
 
 UserSchema.statics.createSecure = function (email, password, cb) {
 	var _this = this;

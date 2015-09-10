@@ -18,7 +18,7 @@ $(function(){
             api_key = "3kqfujuiow2nni3pco8gnzbf";
             terms = $('#etsy-terms').val();
             etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=women&category=clothes&tags="+
-                terms+"&limit=12&includes=Images:1&api_key="+api_key;
+                terms+"&limit=20&includes=Images:1&api_key="+api_key;
 
             $('#etsy-images').empty();
             $('<p></p>').text('Searching for '+terms).appendTo('#etsy-images');
@@ -31,8 +31,8 @@ $(function(){
                         $('#etsy-images').empty();
                         if (data.count > 0) {
                             $.each(data.results, function(i,item) {
-                                $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images").wrap(
-                                    "<a href='" + item.url + "'></a>"
+                                $("<img/><i class='glyphicon glyphicon-heart></i>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images").wrap(
+                                    "<a class='wrapper' href='" + item.url + "'></a>"
                                 );
                                 if (i%4 == 3) {
                                     $('<br/>').appendTo('#etsy-images');

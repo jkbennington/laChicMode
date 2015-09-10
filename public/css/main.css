@@ -19,6 +19,18 @@ h2 {
   /* Pad bottom by footer height */
   padding: 0 0 60px;
 }
+
+.wrapper {
+   position: relative;
+}
+/*.glyphicon {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 30px;
+  color: white;
+  z-index: 999;
+}*/
 .modal-content{
   background-image: url("dog.jpg")
 }

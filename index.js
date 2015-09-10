@@ -10,6 +10,8 @@ var app = express();
 
 var db = require("./models");
 
+
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.use("/vendor", express.static("bower_components"));
