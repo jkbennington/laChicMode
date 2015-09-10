@@ -15,7 +15,7 @@ $(function(){
 
     $(document).ready(function(){
         $('#etsy-search').click('submit', function() {
-            api_key = "3kqfujuiow2nni3pco8gnzbf";
+            var api_key = "3kqfujuiow2nni3pco8gnzbf";
             terms = $('#etsy-terms').val();
             etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=women&category=clothes&tags="+
                 terms+"&limit=20&includes=Images:1&api_key="+api_key;
