@@ -3,7 +3,8 @@ var mongoose = require("mongoose"),
 	bcrypt = require('bcrypt');
 
 var Favorite = new Schema({
-	favorite: String     
+	url: String,
+	imageurl: String     
 });
 
 var UserSchema = new Schema({

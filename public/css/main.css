@@ -20,9 +20,9 @@ h2 {
   padding: 0 0 60px;
 }
 
-.wrapper {
-   position: relative;
-}
+/*.wrapper {
+   position: absolute;
+}*/
 /*.glyphicon {
   position: absolute;
   top: 20px;

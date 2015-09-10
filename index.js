@@ -2,7 +2,7 @@ var express = require("express"),
     path = require("path"),
     bodyParser = require("body-parser"),
     session = require("express-session"),
-
+    request = require('request'),
     _ = require("underscore");
 
 
@@ -82,6 +82,16 @@ app.post(["/sessions", "/api/login"], function login(req, res){
 			res.redirect("/profile");
 		}
 	});
+});
+
+app.get(["/search"], function search (req, res){	
+	var terms = req.query.search;
+	api_key = "3kqfujuiow2nni3pco8gnzbf"; 
+	etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=women&category=clothes&tags="+
+	terms+"&limit=20&includes=Images:1&api_key="+api_key;
+	res.send(etsyURL)
+
+
 });
 
 app.get("/profile", function userShow(req, res){
