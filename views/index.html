@@ -25,8 +25,10 @@
 		        <a class="navbar-brand" href="#">La Chic Mode</a>
 		      </div>
 		      <div class="collapse navbar-collapse">
-		        <button type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#favorites">Profile</button>
+		        
 		        <button type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#myModal">Login/Sign Up</button>
+		        <button id="logout" type="button" class="btn btn-primary navbar-btn navbar-right">Logout</button>
+		        <button type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#favorites">Profile</button>  
 		      </div>
 		    </div>
 		  </div>
@@ -155,7 +157,8 @@
 		            <h4 class="modal-title" id="myModalLabel">Favorite Items</h4>
 		          </div>
 		          <div class="modal-body">
-		            <ul id = "UserFav">
+		            <!-- Template for  -->
+		            <ul id = "userFav">
 		            </ul>
 		            <script type="text/template" id="favoritesTemplate">
 		            <li><%= url %> : <%= image %> </li>

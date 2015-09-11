@@ -23,14 +23,15 @@ h2 {
   /* Pad bottom by footer height */
   padding: 0 0 60px;
 }
-#evil
+/*#evil
 {
-position: absolute
+position: relative;
 -webkit-appearance: none;
 outline: none;
 border: 0;
 background: transparent;
-}
+margin: 2em;
+}*/
 /*#etsy-images{
   position:relative;
   height:170;
@@ -44,7 +45,7 @@ background: transparent;
    display:inline-block;
 }
 .glyphicon-heart {
-  position: absolute;
+  position: relative;
   top: 20px;
   left: 40px;
   font-size: 30px;

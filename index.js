@@ -49,10 +49,9 @@ app.use(function(req,res,next){
 	next();
 })
 
-app.get("/api/logout", function (req, res){
+app.post("/api/logout", function (req, res){
 	req.logout();
-	res.send(200);
-	res.redirect("/#")
+	res.redirect("/#");
 });
 
 app.post(["/users", "/api/signup"], function signup(req, res){
@@ -105,8 +104,7 @@ app.get("/api/profile", function userShow(req, res){
 });
 
 app.post('/favorites', function(req, res){
-	console.log(req.body);
-	if(req.body.name !== undefined){
+	if(req.body.url!== undefined){
 		req.currentUser(function(err,user){
 			var newfav = {
 				url: req.body.url

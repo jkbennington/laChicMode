@@ -52,8 +52,8 @@ $(document).ready(function(){
                         if (data.count > 0) {
                             $.each(data.results, function(i,item) {
                                 $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images").wrap(
-                                    // "<a href='" + item.url + "'></a>"
-                                ).wrap("<div id='evil' class='wrapper glyphicon glyphicon-heart' style='cursor:pointer'><a href='" + item.url + "'></a></div>")
+                                    
+                                ).wrap("<div id='evil' class='wrapper glyphicon glyphicon-heart' style='cursor:pointer'><a href='" + item.url + "'></a><span class='overlay'></div>")
                                 if (i === 5) {
                                     $('<br/>').appendTo('#etsy-images');
                                 }
