@@ -49,7 +49,7 @@ $(document).ready(function(){
                             $('#etsy-images').empty();
                             if (data.count > 0) {
                                 data.results.forEach(function(item) {
-                                    $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images")
+                                    $("<img/>").attr("src", item.Images[0].url_170x135).append.appendTo("#etsy-images")
                                     .append(
                                         "<a href='" + item.url + "'></a>"
                                     )
