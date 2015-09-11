@@ -79,7 +79,7 @@ app.post(["/sessions", "/api/login"], function login(req, res){
 			res.sendStatus(400)
 		}else {
 			req.login(user);
-			res.redirect("/profile");
+			res.redirect("/#");
 		}
 	});
 });
@@ -94,7 +94,7 @@ app.get(["/search"], function search (req, res){
 
 });
 
-app.get("api/profile", function userShow(req, res){
+app.get("/profile", function userShow(req, res){
 	req.currentUser(function (err, user){
 		res.send("Hello " + user.email);
 	});
