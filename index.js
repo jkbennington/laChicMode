@@ -51,7 +51,7 @@ app.use(function(req,res,next){
 
 app.post("/api/logout", function (req, res){
 	req.logout();
-	res.redirect("/#");
+	res.redirect("/");
 });
 
 app.post(["/users", "/api/signup"], function signup(req, res){
@@ -65,7 +65,7 @@ app.post(["/users", "/api/signup"], function signup(req, res){
 				res.send(400)
 			}
 			req.login(user)
-			res.redirect("/#")
+			res.redirect("/")
 	});
 });
 
@@ -78,7 +78,7 @@ app.post(["/sessions", "/api/login"], function login(req, res){
 			res.sendStatus(400)
 		}else {
 			req.login(user);
-			res.redirect("/#");
+			res.redirect("/");
 		}
 	});
 });
@@ -116,7 +116,7 @@ app.post('/favorites', function(req, res){
 			})
 			
 		})
-		res.send("okay");
+		res.send("HEYO!");
 	}
 })
 
