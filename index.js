@@ -88,13 +88,13 @@ app.get(["/search"], function search (req, res){
 	var terms = req.query.search;
 	api_key = "3kqfujuiow2nni3pco8gnzbf"; 
 	etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=women&category=clothes&tags="+
-	terms+"&limit=20&includes=Images:1&api_key="+api_key;
+	terms+"&limit=12&includes=Images:1&api_key="+api_key;
 	res.send(etsyURL)
 
 
 });
 
-app.get("/profile", function userShow(req, res){
+app.get("api/profile", function userShow(req, res){
 	req.currentUser(function (err, user){
 		res.send("Hello " + user.email);
 	});

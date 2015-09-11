@@ -4,7 +4,7 @@ var mongoose = require("mongoose"),
 
 var Favorite = new Schema({
 	url: String,
-	imageurl: String     
+	image: String     
 });
 
 var UserSchema = new Schema({

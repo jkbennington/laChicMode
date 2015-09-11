@@ -3,7 +3,8 @@ html,
 body {
   height: 100%;
   width:100%;
-  background-image: url("street.jpg");
+  
+
   /* The html and body elements cannot have any padding or margin. */
 }
 h2 {
@@ -11,6 +12,9 @@ h2 {
 }
 /* Wrapper for page content to push down footer */
 #wrap {
+  background-image: url("street.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100%;
   height: auto !important;
   height: 100%;
@@ -19,18 +23,29 @@ h2 {
   /* Pad bottom by footer height */
   padding: 0 0 60px;
 }
+#evil
+{
+position: absolute
+-webkit-appearance: none;
+outline: none;
+border: 0;
+background: transparent;
+}
 
-/*.wrapper {
-   position: absolute;
-}*/
-/*.glyphicon {
+.wrapper {
+   position: relative;
+   height:170;
+   width:135;
+   display:inline-block;
+}
+.glyphicon-heart {
   position: absolute;
   top: 20px;
   left: 40px;
   font-size: 30px;
-  color: white;
+  color: #FFFFCC;
   z-index: 999;
-}*/
+}
 .modal-content{
   background-image: url("dog.jpg")
 }
@@ -54,6 +69,9 @@ h2 {
   margin: 20px 0;
 }
 
+#etsy-images {
+   left:50%;
+}
 
 #footer > .container {
   padding-left: 15px;
