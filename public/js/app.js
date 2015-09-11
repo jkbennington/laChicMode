@@ -15,9 +15,11 @@
 //     console.log(this);
 // }
 $(document).ready(function(){
-    $('#evil').click('submit', function(){
-        console.log("HEY!")
+    $("#evil").on("click", function () {
+
+    console.log("hello")
     });
+
 });
 
 
@@ -45,33 +47,29 @@ $(document).ready(function(){
                     url: data,
                     dataType: 'jsonp',
                     success: function(data) {
-                        if (data.ok) {
-                            $('#etsy-images').empty();
-                            if (data.count > 0) {
-                                data.results.forEach(function(item) {
-                                    $("<img/>").attr("src", item.Images[0].url_170x135).append.appendTo("#etsy-images")
-                                    .append(
-                                        "<a href='" + item.url + "'></a>"
-                                    )
-                                    .wrap("<div class='wrapper'><button id='evil' type='submit' class='glyphicon glyphicon-heart'><a href='" + item.url + "'></a></button></div>");
-                                    if (i === 5) {
-                                        $('<br/>').appendTo('#etsy-images');
-                                    }
-                                });
-                            } else {
-                                $('<p>No results.</p>').appendTo('#etsy-images');
-                            }
+                         if (data.ok) {
+                        $('#etsy-images').empty();
+                        if (data.count > 0) {
+                            $.each(data.results, function(i,item) {
+                                $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images").wrap(
+                                    // "<a href='" + item.url + "'></a>"
+                                ).wrap("<div id='evil' class='wrapper glyphicon glyphicon-heart' style='cursor:pointer'><a href='" + item.url + "'></a></div>")
+                                if (i === 5) {
+                                    $('<br/>').appendTo('#etsy-images');
+                                }
+                            });
                         } else {
-                            $('#etsy-images').empty();
-                            alert(data.error);
+                            $('<p>No results.</p>').appendTo('#etsy-images');
                         }
+                    } else {
+                        $('#etsy-images').empty();
+                        alert(data.error);
                     }
-                });
+                }
+            });
 
+            return false;
             }
         });
-
-        return false;
-    })
+    });
 });
-

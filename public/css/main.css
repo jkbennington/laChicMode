@@ -31,11 +31,16 @@ outline: none;
 border: 0;
 background: transparent;
 }
-
+/*#etsy-images{
+  position:relative;
+  height:170;
+  width: 135;
+  display:inline-block;
+}*/
 .wrapper {
    position: relative;
-   height:170;
-   width:135;
+   height:200;
+   width:150;
    display:inline-block;
 }
 .glyphicon-heart {

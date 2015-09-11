@@ -94,11 +94,33 @@ app.get(["/search"], function search (req, res){
 
 });
 
-app.get("/profile", function userShow(req, res){
+app.get("/api/profile", function userShow(req, res){
+	var profile = {};
 	req.currentUser(function (err, user){
-		res.send("Hello " + user.email);
-	});
+		if(err){
+			res.send(400)
+		}profile.data = user.favorites
+		res.send(profile)
+	})
 });
+
+app.post('/favorites', function(req, res){
+	console.log(req.body);
+	if(req.body.name !== undefined){
+		req.currentUser(function(err,user){
+			var newfav = {
+				url: req.body.url
+			};
+			user.favorites.push(newfav);
+			user.save(function(err,success){
+				if(err){return console.log(err)}
+					console.log("saved");
+			})
+			
+		})
+		res.send("okay");
+	}
+})
 
 
 app.listen(process.env.PORT || 3000)
