@@ -43,7 +43,7 @@
 		              <br>
 		              <div class="bs-example bs-example-tabs">
 		                  <ul id="myTab" class="nav nav-tabs">
-		                    <li class="active"><a href="#signin" data-toggle="tab">Login</a></li>
+		                    <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
 		                    <li class=""><a href="#signup" data-toggle="tab">Sign Up</a></li>
 		                    <li class=""><a href="#why" data-toggle="tab">Why?</a></li>
 		                  </ul>
@@ -53,6 +53,7 @@
 		              <div class="tab-pane fade in" id="why">
 		              <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
 		              </div>
+
 		              <div class="tab-pane fade active in" id="login">
 		                  <form method="post" action="/api/login" class="form-horizontal">
 		                  <fieldset>
@@ -61,7 +62,7 @@
 		                  <div class="control-group">
 		                    <label class="control-label" for="email">Email:</label>
 		                    <div class="controls">
-		                      <input required="" id="email" name="email" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
+		                      <input required="" id="email" name="email" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium">
 		                    </div>
 		                  </div>
 
@@ -82,6 +83,7 @@
 		                  </fieldset>
 		                  </form>
 		              </div>
+
 		              <div class="tab-pane fade" id="signup">
 		                  <form method="post" action="/api/signup" class="form-horizontal">
 		                  <fieldset>
@@ -111,6 +113,11 @@
 		                  </div>
 		                  </fieldset>
 		                  </form>
+
+
+	
+		              
+
 		            </div>
 		          </div>
 		            </div>
