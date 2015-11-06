@@ -12,7 +12,7 @@ h2 {
 }
 /* Wrapper for page content to push down footer */
 #wrap {
-  background-image: url("street.jpg");
+  background: url("street.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100%;

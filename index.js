@@ -5,6 +5,9 @@ var express = require("express"),
     request = require('request'),
     _ = require("underscore");
 
+var env = process.env;
+var api_key = env.ET_API_KEY;
+
 
 var app = express();
 
@@ -85,7 +88,6 @@ app.post(["/sessions", "/api/login"], function login(req, res){
 
 app.get(["/search"], function search (req, res){	
 	var terms = req.query.search;
-	api_key = "3kqfujuiow2nni3pco8gnzbf"; 
 	etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=women&category=clothes&tags="+
 	terms+"&limit=12&includes=Images:1&api_key="+api_key;
 	res.send(etsyURL)
